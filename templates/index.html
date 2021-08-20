@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>IIoT Smart Aquaponic System SEP Classification</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="env_temp" placeholder="env_temp" required="required" />
+        <input type="text" name="env_humid" placeholder="env_humid" required="required" />
+	<input type="text" name="diss_ox" placeholder="diss_ox" required="required" />
+	<input type="text" name="ph_level" placeholder="ph_level" required="required" />
+    	<input type="text" name="turbidity" placeholder="turbidity" required="required" />
+        <input type="text" name="tot_diss_solid" placeholder="tot_diss_solid" required="required" />
+	<input type="text" name="water_temp" placeholder="water_temp" required="required" />
+	<input type="text" name="hardness" placeholder="hardness" required="required" />
+	<input type="text" name="wqi" placeholder="wqi" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
